@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content=".">
+    <meta name="keywords"
+          content="UCM, Video Generation, Camera Control, Memory Retrieval">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UCM</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/twentytwenty.css">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="img/icon.png">
+
+
+    <script src="./static/js/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/jquery.event.move.js"></script>
+    <script src="./static/js/jquery.twentytwenty.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+
+
+
+<body>
+
+
+<section class="hero teaser ">
+    <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+            <div class="columns is-centered">
+                <div class="column has-text-centered ">
+                    <img src="img/logo.png" style="height:150px; margin-bottom: 10px;"></img>
+                    <h1 class="title is-1 publication-title has-text-centered">
+                        UCM: Unifying Camera Control and Memory with Time-aware Positional Encoding Warping for World Models
+                    </h1>
+                    <!-- <h2 class="title publication-title is-4 has-text-grey"> ArXiV 2026 </h2> -->
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            <a href='https://scholar.google.com/citations?user=zHp0rMIAAAAJ'>Tian-Xing Xu</a><sup>*1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=4JKwZRsAAAAJ">Zi-Xuan Wang</a><sup>*1</sup>
+                        </span>
+                        <span class="author-block">
+                            Guangyuan Wang<sup>*&dagger;2</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=Arz3iGUAAAAJ">Li Hu</a><sup>&dagger;2</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=dOWmKOUAAAAJ">Zhongyi Zhang</a><sup>3</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=QTgxKmkAAAAJ">Peng Zhang</a><sup>2</sup>
+                        </span>
+                        <span class="author-block">
+                            Bang Zhang<sup>&ddagger;2</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href='https://scholar.google.com/citations?user=AWtV-EQAAAAJ'>Song-Hai Zhang</a><sup>&ddagger;1</sup>
+                        </span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Tsinghua University</span>
+                        <span class="author-block"><sup>2</sup>Tongyi Lab, Alibaba</span>
+                        <span class="author-block"><sup>3</sup>USTC</span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>*</sup>Co-first authors</span>
+                        <span class="author-block"><sup>&dagger;</sup>Project leader</span>
+                        <span class="author-block"><sup>&ddagger;</sup>Corresponding authors</span>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <span class="link-block">
+                                <!-- Paper Link. TODO-->
+                                <a href="https://arxiv.org/"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                                <!-- Code Link. TODO -->
+                                <!-- <a href="https://github.com/"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a> -->
+                                <!-- HF Link. TODO -->
+                                <!-- <a href="https://huggingface.co/spaces/" target="_blank"
+                                   rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        &#129303;
+                                    </span>
+                                    <span>Demo</span>
+                                </a> -->
+                                <!-- Model Link. TODO -->
+                                <!-- <a href="https://huggingface.co/" target="_blank"
+                                   rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                       <i class="fas fa-dumbbell"></i>
+                                    </span>
+                                    <span>Model</span>
+                                </a> -->
+                                <!-- Video Link. TODO -->
+                                <span class="link-block">
+                                    <a href="https://www.youtube.com/watch?v=5R3PbKN4ER8"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                          <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: left; ">
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+                    
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                <source src="video/demo/0001_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0002_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0003_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0004_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0005_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0006_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0007_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0008_gen.mp4" type="video/mp4">
+                </video>
+                <!-- <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0009_gen.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/demo/0010_gen.mp4" type="video/mp4">
+                </video> -->
+            </div>
+
+            <div class="content has-text-justified" style="margin-top: 15px;">
+                We present <b>UCM</b>, a novel framework to explore 4D world of a reference image following the user-specified camera trajectory, which unifies long-term memory and precise camera control via a time-aware positional encoding warping mechanism. 
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#results-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+        bulmaCarousel.attach('#results-carousel-vertical', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+
+
+<br><br>
+
+<section class="hero teaser is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="columns is-centered has-text-centered"></div>
+            <h2 class="title is-3">Overview</h2>
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/5R3PbKN4ER8?si=KgRHjzcBSGQyBSKL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+    <div class="hero-body">
+        <!-- Method. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-three-fifths" style=" margin-top: 30px; margin-bottom: 20px;">
+                    <h2 class="title is-3">Introduction</h2>
+                    <div class="content has-text-justified">
+
+                        <b>Abstract.</b>
+                            World models based on video generation demonstrate remarkable potential for simulating interactive environments but face persistent difficulties in two key areas: 
+                            maintaining long-term content consistency when scenes are revisited and enabling precise camera control from user-provided inputs. 
+                            Existing methods based on explicit 3D reconstruction often compromise flexibility in unbounded scenarios and fine-grained structures. 
+                            Alternative methods rely directly on previously generated frames without establishing explicit spatial correspondence, thereby constraining controllability and consistency. 
+                            To address these limitations,  we present <b>UCM</b>, a novel framework that unifies long-term memory and precise camera control via a time-aware positional encoding warping mechanism. 
+                            To reduce computational overhead, we design an efficient dual-stream diffusion transformer for high-fidelity generation. 
+                            Moreover, we introduce a scalable data curation strategy utilizing point-cloud-based rendering to simulate scene revisiting, facilitating training on over 500K monocular videos.
+                            Extensive experiments on real-world and synthetic benchmarks demonstrate that <b>UCM</b> significantly outperforms state-of-the-art methods in long-term scene consistency, while also achieving precise camera controllability in high-fidelity video generation. 
+                        <div class="hero-body" style="margin-top: 40px; margin-bottom: -30px;">
+                            <img id="overview" width="100%" src="./img/ucm.png"/>
+                        </div>
+                        <b>An overview of UCM.</b>
+                            Given previously generated frames and a specific camera trajectory as input, <b>UCM</b> encodes the historical frames into clean tokens to condition the denoising of noisy tokens. 
+                            For camera control and memory injection, the framework proposes time-aware positional encoding warping to establish spatio-temporal correspondence and an efficient dual-stream transformer architecture for processing. 
+                            After iterative denoising, <b>UCM</b> yields a high-fidelity, scene-consistent video that adheres to the user-specified trajectory.
+
+                        <div class="hero-body" style="margin-top: 40px; margin-bottom: -30px;">
+                            <img id="inference" width="50%" src="./img/ucm_block.png"/>
+                        </div>
+                        <b>The architecture of UCM DiT-block.</b>
+                            Each noisy token attends to all other noisy tokens and is guided by clean tokens via time-aware warped PEs, implemented through KV concatenation.
+                            For the clean tokens, each token attends only to other clean tokens within the same frame using original PEs. 
+                            This block-sparse attention mask enables camera control and memory guidance with reduced computational cost.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/ Method. -->
+    </div>
+</section>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Cycle Trajectory</h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/cycle/59_ucm.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/cycle/81_ucm.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/cycle/93_ucm.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">
+                Memory Initialization
+            </h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/23_gt.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GT</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/23_ucm.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">UCM</div>
+                    </div>
+                </div>
+
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/42_gt.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GT</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/42_ucm.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">UCM</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/49_gt.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GT</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/49_ucm.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">UCM</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/55_gt.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GT</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/mem_init/55_ucm.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">UCM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Comparison with Monocular Depth Estimation methods on labeled datasets</h2>
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/sintel.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/kitti.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="70%" preload controls>
+                    <source src="./video/compare_with_mde/gmu.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/sintel2.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="60%" preload controls>
+                    <source src="./video/compare_with_mde/scannet.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#cmp-gt-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+<!-- 
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Camera pose estimation (static scene)</h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video7.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output7.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video8.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output8.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video9.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output9.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video10.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output10.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video11.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output11.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+
+<!-- 
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">
+                Camera pose estimation (dynamic scene)
+            </h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video1.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video2.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video3.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video4.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video5.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output5.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+<!-- 
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">4D reconstruction</h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+                    
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/decouple/output1.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output2.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output3.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output4.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output5.mp4" type="video/mp4">
+                    </video>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+<!-- 
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Ablation study of latent distribution aligment (L.A.)</h2>
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/motocross-jump.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/lab-coat.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/scooter-board.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#cmp-gt-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+
+
+<footer class="footer">
+    <div class="hero-body">
+        <div class="columns is-two-fifths is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Website template credit to <a
+                            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and is licensed under a <a
+                            rel="license"
+                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.video-with-label {
+  position: relative;
+  display: inline-block;
+}
+
+.video-label {
+  position: absolute;
+  top: 20px;
+  left:10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+</style>
+
+</body>
+</html>
